@@ -47,4 +47,16 @@ public static void attemps() {
 		for (int i = 0; i<thewordgiven.length; i++) { //loops until every i (each letter) is replaced
 			thewordgiven[i]='_'; //replaces each letter in the word with "_" 
 		}
+	
 		
+	while (lives < lifenumber) {
+	
+		
+		letterDisplay(thewordgiven); //activates the method letterdisplay
+	
+		System.out.println("\nThere are " + count + " lives left");
+	
+		System.out.println("Please Enter a lowercase letter: ");
+	
+		char input = sc.nextLine().charAt(0); // this means it will only register the first character you put in
+		System.out.println("\n ---------------------");
