@@ -115,4 +115,10 @@ int choice = two.nextInt();
 			break;
 		}
 }
-		
+	
+public static boolean ifWordIsCorrect(char[] array) { //this method determines whether the _ gets replaced by its initial state (as in turns back into its letter
+	for (int i = 0; i < array.length; i++ ) { 
+		if (array[i]=='_') return false;
+	}
+	return true;
+}	
