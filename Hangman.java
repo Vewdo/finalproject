@@ -122,3 +122,13 @@ public static boolean ifWordIsCorrect(char[] array) { //this method determines w
 	}
 	return true;
 }	
+
+public static void difficulty() { // this method allows the user to choose what difficulty the game should be with the help of a switch
+	Scanner choice = new Scanner(System.in); 
+	
+	System.out.println("Please Select a level by entering its number: ");
+	System.out.println("\n1 - easy (20 lives available)");
+	System.out.println("\n2 - normal (15 lives available)");
+	System.out.println("\n3 - hard (10 lives available)");
+	System.out.println("\n4 - extreme (5 lives available)");
+	System.out.println("\n===============================");
