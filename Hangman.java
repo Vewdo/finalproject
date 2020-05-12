@@ -60,3 +60,15 @@ public static void attemps() {
 	
 		char input = sc.nextLine().charAt(0); // this means it will only register the first character you put in
 		System.out.println("\n ---------------------");
+
+			for (i = 0; i < randomword.length; i++) { //loops each individual character
+		
+		if (randomword[i]==input) { //looks if one character of the word is found in the input given
+			thewordgiven[i] = input;
+			count= count + 1;
+			lives = lives - 1;
+			break;
+		
+		} 
+		
+	}
