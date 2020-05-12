@@ -90,3 +90,16 @@ public static void attemps() {
 	}
 	
 }
+
+public static void gameOver() { //this method tells the user if he lost or won with a choice to restart or not
+	Scanner two = new Scanner(System.in);
+	
+		if (count == 0) {
+			System.out.println("You have ran out of lives");
+			
+		} else if (count > 0) {
+			System.out.println("Congratulations you won with "+count+" lives left");
+		}
+		System.out.println("\nIf you want to play again Enter '1' if not Enter '0'");
+		
+		
