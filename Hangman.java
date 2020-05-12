@@ -31,6 +31,20 @@ public static String wordChosen(String word) {
 public static void main(String[] args) { //method that runs the program in order
 
 	System.out.println("Hangman By Jordano Anoia");
-	
+	attemps();	
 	
 	}
+
+public static void attemps() {
+		
+		Scanner sc = new Scanner (System.in);
+		
+		char[] randomword = wordChosen(word).toCharArray(); //turns the word from the wordChosen method into a chat and allows the char to access its array
+		int amountOfLetters = randomword.length; //turns the length of the word into an amount (integer)
+		char[] thewordgiven = new char[amountOfLetters]; //uses the amount of letters in the word as i 
+			
+		
+		for (int i = 0; i<thewordgiven.length; i++) { //loops until every i (each letter) is replaced
+			thewordgiven[i]='_'; //replaces each letter in the word with "_" 
+		}
+		
