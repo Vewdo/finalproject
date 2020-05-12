@@ -28,12 +28,22 @@ public static String wordChosen(String word) {
 	return word;
 }
 
+private static void letterDisplay(char[] array) { //this method allows us to change each letter we get from the wordsToGuess method in order to help the user know how many letters there are in the word
+	for (int i = 0; i<array.length;i++) { //infinite loop that views each letter individually
+		System.out.print(array[i] + " "); //places a space between each letter
+	}
+}
+
+
+
+
 public static void main(String[] args) { //method that runs the program in order
 
 	System.out.println("Hangman By Jordano Anoia");
-	attemps();	
 	
+	difficulty();
 	}
+	
 
 public static void attemps() {
 		
@@ -47,21 +57,21 @@ public static void attemps() {
 		for (int i = 0; i<thewordgiven.length; i++) { //loops until every i (each letter) is replaced
 			thewordgiven[i]='_'; //replaces each letter in the word with "_" 
 		}
-	
 		
 	while (lives < lifenumber) {
 	
 		
-		letterDisplay(thewordgiven); //activates the method letterdisplay
+	letterDisplay(thewordgiven); //activates the method letterdisplay
 	
-		System.out.println("\nThere are " + count + " lives left");
+	System.out.println("\nThere are " + count + " lives left");
 	
-		System.out.println("Please Enter a lowercase letter: ");
+	System.out.println("Please Enter a lowercase letter: ");
 	
-		char input = sc.nextLine().charAt(0); // this means it will only register the first character you put in
-		System.out.println("\n ---------------------");
-
-			for (i = 0; i < randomword.length; i++) { //loops each individual character
+	char input = sc.nextLine().charAt(0); // this means it will only register the first character you put in
+	System.out.println("\n ---------------------");
+	int i;
+	
+	for (i = 0; i < randomword.length; i++) { //loops each individual character
 		
 		if (randomword[i]==input) { //looks if one character of the word is found in the input given
 			thewordgiven[i] = input;
@@ -72,6 +82,7 @@ public static void attemps() {
 		} 
 		
 	}
+	
 	count--;
 	lives++;
 	
@@ -91,6 +102,7 @@ public static void attemps() {
 	
 }
 
+
 public static void gameOver() { //this method tells the user if he lost or won with a choice to restart or not
 	Scanner two = new Scanner(System.in);
 	
@@ -102,7 +114,9 @@ public static void gameOver() { //this method tells the user if he lost or won w
 		}
 		System.out.println("\nIf you want to play again Enter '1' if not Enter '0'");
 		
-int choice = two.nextInt();
+		
+		
+		int choice = two.nextInt();
 		
 		switch (choice) {
 		
@@ -115,13 +129,14 @@ int choice = two.nextInt();
 			break;
 		}
 }
-	
+
+
 public static boolean ifWordIsCorrect(char[] array) { //this method determines whether the _ gets replaced by its initial state (as in turns back into its letter
 	for (int i = 0; i < array.length; i++ ) { 
 		if (array[i]=='_') return false;
 	}
 	return true;
-}	
+}
 
 public static void difficulty() { // this method allows the user to choose what difficulty the game should be with the help of a switch
 	Scanner choice = new Scanner(System.in); 
@@ -132,3 +147,36 @@ public static void difficulty() { // this method allows the user to choose what 
 	System.out.println("\n3 - hard (10 lives available)");
 	System.out.println("\n4 - extreme (5 lives available)");
 	System.out.println("\n===============================");
+	int level = choice.nextInt();
+	
+	switch (level) {
+	
+	case 1:
+		count = 20;
+		lifenumber=20;
+		attemps();
+		break;
+	
+	case 2:
+		count = 15;
+		lifenumber=15;
+		attemps();
+		break;
+	
+	case 3:
+		count = 10;
+		lifenumber=10;
+		attemps();
+		break;
+	
+	case 4:
+		count = 5;
+		lifenumber=5;
+		attemps();
+		break;
+		
+	}
+	
+	
+}
+}
