@@ -72,3 +72,21 @@ public static void attemps() {
 		} 
 		
 	}
+	count--;
+	lives++;
+	
+		if (ifWordIsCorrect(thewordgiven)) { //if the word and the word the user guessed matches then this occurs
+		
+			gameOver(); // calls gameOver method
+			break;
+	}
+	
+}
+	
+	if (count == 0) {
+		
+		gameOver(); 
+		
+	}
+	
+}
