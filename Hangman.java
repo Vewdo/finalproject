@@ -102,4 +102,17 @@ public static void gameOver() { //this method tells the user if he lost or won w
 		}
 		System.out.println("\nIf you want to play again Enter '1' if not Enter '0'");
 		
+int choice = two.nextInt();
+		
+		switch (choice) {
+		
+		case 0:
+			break;
+		case 1:
+			count=0;
+			lives=0;
+			difficulty();
+			break;
+		}
+}
 		
