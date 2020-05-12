@@ -28,4 +28,9 @@ public static String wordChosen(String word) {
 	return word;
 }
 
+public static void main(String[] args) { //method that runs the program in order
 
+	System.out.println("Hangman By Jordano Anoia");
+	
+	
+	}
